@@ -1,0 +1,28 @@
+package handlingscrolbar;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class livetech {
+@Test
+	
+	public void scrollbarHandling()
+	{
+		WebDriver driver;
+       String applicationurlAddress="https://Livetech.in";
+		
+		System.setProperty("webdriver.chrome.driver","./Driverfiles/chromedriver.exe");
+	    driver = new ChromeDriver();
+		driver.get(applicationurlAddress);
+		
+		//driver.manage().window().maximize();
+		
+		JavascriptExecutor js=((JavascriptExecutor)driver);
+		js.executeScript("window.Scrollto(0,9000)");
+		
+		//((JavascriptExecutor)driver).executeScript("window.Scrollto(0,7000)");
+	}
+
+}
